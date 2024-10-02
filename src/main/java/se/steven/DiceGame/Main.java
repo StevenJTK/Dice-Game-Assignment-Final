@@ -10,8 +10,10 @@ public class Main {
 
         dice.gameStart();
         dice.firstRoll();
+        dice.playerTwo();
         dice.secondRoll();
         dice.gameScore();
 
+        System.out.println("Thanks for playing!");
     }
 }

@@ -10,17 +10,19 @@ public class Dice {
 
     // Attributes
     private int total = 0;
-    private int total2 = 0;
+    private int total2 = 0; // Combine 1 & 2
     private int[] player1Roll = new int[2];
     private int[] player2Roll = new int[2];
     private Player player1;
     private Player player2;
 
+    // Initiates the game
     public void gameStart() {
         System.out.println("Player one, please enter your name. ");
         player1 = new Player(sc.nextLine());
     }
 
+    // Logic for player 1 roll
     public void firstRoll() {
         for (int i = 0; i < 2; i++) {
             player1Roll[i] = random.nextInt(6) + 1;
@@ -30,10 +32,14 @@ public class Dice {
         System.out.println("Your final score is " + total);
     }
 
-    public void secondRoll() {
+    // Player 2 input
+    public void playerTwo() {
         System.out.println("Player two, please enter your name. ");
         player2 = new Player(sc.nextLine());
+    }
 
+    // Player 2 roll logic
+    public void secondRoll() {
         for (int i = 0; i < 2; i++) {
             player2Roll[i] = random.nextInt(6) + 1;
             total2 += player2Roll[i];
@@ -42,6 +48,7 @@ public class Dice {
         System.out.println("Your total score is " + total2);
     }
 
+    // Logic for calculating game scores & printing results
     public void gameScore() {
         if (total > total2) {
             System.out.println("Congratulations " + player1.getName() + ", you are the winner! ");
